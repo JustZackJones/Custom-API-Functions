@@ -64,7 +64,7 @@ class APIDocs:
                         }
                     },
                     "returns": {
-                        "phone": {
+                        "phone_result": {
                             "type": "string",
                             "example": "+19704333773",
                             "description": "The phone number in a valid 10DLC format"
@@ -92,7 +92,7 @@ class APIDocs:
                         }
                     },
                     "returns": {
-                        "phone": {
+                        "phone_result": {
                             "type": "string",
                             "example": "(333) 444-5555",
                             "description": "The phone number in a human-readable format"

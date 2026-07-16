@@ -25,13 +25,13 @@ class Utils:
             if len(enforced) == 10:
                 enforced = '+1' + enforced
             return {
-                "phone": enforced,
+                "phone_result": enforced,
                 "original": phone_number,
                 "isValid": Utils.is_10dlc_format(enforced)
             }
         except (ValueError, AttributeError):
             return {
-                "phone": None,
+                "phone_result": None,
                 "original": phone_number,
                 "isValid": False
             }
@@ -72,12 +72,12 @@ class Utils:
         try:
             normalized = Utils.enforce_10dlc_format(phone_number)
             if normalized and normalized.get("isValid"):
-                digits = normalized["phone"][2:]
+                digits = normalized["phone_result"][2:]
                 formatted = f"({digits[0:3]}) {digits[3:6]}-{digits[6:10]}"
                 result = {
-                    "phone": formatted,
+                    "phone_result": formatted,
                     "original": phone_number,
-                    "normalized": normalized["phone"],
+                    "normalized": normalized["phone_result"],
                     "isValid": True
                 }
         except (ValueError, AttributeError, TypeError):
